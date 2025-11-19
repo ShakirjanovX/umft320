@@ -1,26 +1,27 @@
 from fastapi import FastAPI
 import proekt320ShakirjanovXasan as p1
-import funcktiaInoyatov as p2
+from funcInoyatov import funcinoyatov 
 from funcartur import artur
 from pydantic import BaseModel
-
-app = FastAPI()
-
-@app.get("/")
-def read_root():
-    return {"message": "Hello World"}
-
-print(p1.func1(2,3))
-print(p2.funk2Inoyatov(4,4))
-print(artur(6,3))
-print ("fastapi+uvicorn")
 
 
 app = FastAPI( title="umft320",
 version="1.0.0",
-description="Платформа для покупки и продажи",
+description="Shakirjanov-Платформа для покупки и продажи",
 docs_url="/docs",
 redoc_url="/redoc",)
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello World"}
+print("                         -----------------bu Shakirjanov reposi------------------")
+print(p1.func1(2,3))
+print(funcinoyatov(4,4))
+print(artur(6,3))
+print ("fastapi+uvicorn")
+
+
+
 
 class TwoNumbers(BaseModel):
   x: float
@@ -39,3 +40,10 @@ def get_p1(x: float, y: float):
 @app.post("/p1")
 def post_c2(data: TwoNumbers):
     return {"result": p1(data.x, data.y)}
+
+@app.get("/inoyatov")
+def get_inoyatov(x: float, y: float ):
+    return {"result": funcinoyatov(x, y)}
+@app.post("/inoyatov")
+def post_inoyatov(data: TwoNumbers):
+    return {"result": funcinoyatov(data.x, data.y)}
