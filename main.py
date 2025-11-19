@@ -16,7 +16,7 @@ print(artur(6,3))
 print ("fastapi+uvicorn")
 
 
-app = FastAPI( title="MMM",
+app = FastAPI( title="umft320",
 version="1.0.0",
 description="Платформа для покупки и продажи",
 docs_url="/docs",
@@ -28,8 +28,14 @@ class TwoNumbers(BaseModel):
 
 @app.get("/c2")
 def get_c2(x: float, y: float):
- return {"result": p1.func1(x,y)}
-
+    return {"result": c2(x, y)}
 @app.post("/c2")
 def post_c2(data: TwoNumbers):
- return {"result": p1.func1(data.x, data.y)}
+    return {"result": c2(data.x, data.y)}
+
+@app.get("/p1")
+def get_p1(x: float, y: float):
+    return {"result": p1(x, y)}
+@app.post("/p1")
+def post_c2(data: TwoNumbers):
+    return {"result": p1(data.x, data.y)}
