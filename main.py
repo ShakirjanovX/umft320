@@ -3,7 +3,7 @@ import proekt320ShakirjanovXasan as p1
 from funcInoyatov import funcinoyatov 
 from funcartur import artur
 from pydantic import BaseModel
-
+from functionkostya import konstantin
 
 app = FastAPI( title="umft320",
 version="1.0.0",
@@ -47,3 +47,10 @@ def get_inoyatov(x: float, y: float ):
 @app.post("/inoyatov")
 def post_inoyatov(data: TwoNumbers):
     return {"result": funcinoyatov(data.x, data.y)}
+
+@app.get("/konstantin")
+def get_konstantin(x: float, y: float):
+    return {"result": konstantin(x, y)}
+@app.post("/konstantin")
+def post_konstantin(data: TwoNumbers):
+    return {"result": konstantin(data.x, data.y)}
