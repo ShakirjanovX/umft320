@@ -95,7 +95,7 @@ body {
 }
 
 .container {
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
     background: linear-gradient(135deg, var(--avatar-dark) 0%, var(--avatar-dark-secondary) 100%);
     border-radius: 20px;
@@ -339,9 +339,10 @@ main {
     background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(123, 44, 191, 0.05) 100%);
     border: 2px solid rgba(0, 212, 255, 0.2);
     border-radius: 15px;
-    padding: 30px;
+    padding: 50px;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .function-card::before {
@@ -391,6 +392,7 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-bottom: 25px;
+    width: 100%;
 }
 
 .input-wrapper {
@@ -409,11 +411,11 @@ main {
 
 input[type="number"] {
     width: 100%;
-    padding: 12px 15px;
+    padding: 15px 20px;
     border: 2px solid rgba(0, 212, 255, 0.3);
     border-radius: 8px;
     background: rgba(0, 212, 255, 0.05);
-    font-size: 1em;
+    font-size: 1.1em;
     color: var(--avatar-cyan);
     transition: all 0.3s ease;
     position: relative;
@@ -633,7 +635,7 @@ input[type="number"]:focus ~ .input-glow {
 footer {
     background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%);
     text-align: center;
-    padding: 25px;
+    padding: 40px 25px;
     color: rgba(0, 212, 255, 0.6);
     font-size: 0.9em;
     border-top: 2px solid rgba(0, 212, 255, 0.2);
@@ -644,11 +646,52 @@ footer {
 footer::before {
     content: '';
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--avatar-cyan), transparent);
+}
+
+footer .avatar-info {
+    margin: 0 0 20px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(123, 44, 191, 0.05) 100%);
+    border: 2px solid rgba(0, 212, 255, 0.2);
+    border-radius: 10px;
+}
+
+footer .avatar-info h3 {
+    color: var(--avatar-cyan);
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    text-shadow: 0 0 10px var(--avatar-cyan);
+}
+
+footer .avatar-info p {
+    margin-bottom: 8px;
+    color: rgba(0, 212, 255, 0.8);
+    font-size: 0.95em;
+}
+
+footer .avatar-info a {
+    color: var(--avatar-cyan);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px var(--avatar-cyan);
+}
+
+footer .avatar-info a:hover {
+    text-decoration: underline;
+    filter: drop-shadow(0 0 10px var(--avatar-cyan));
+}
+
+footer > p {
+    margin: 0;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+    color: rgba(0, 212, 255, 0.5);
 }
 
 /* Loading Spinner */

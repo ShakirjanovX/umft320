@@ -37,7 +37,7 @@ def read_root():
 print("                         -----------------bu Shakirjanov reposi------------------")
 print(p1(2,3))
 print(funcinoyatov(4,4))
-print(artur(6,3))
+print(artur(6,3),"Hello")
 print ("fastapi+uvicorn")
 
 
@@ -87,8 +87,9 @@ def post_soliyev(data: TwoNumbers):
     return {"result": func_soliyev(data.x, data.y)}
 
 @app.get("/artur")
-def get_c2(x: float, y: float):
- return {"result": artur(x, y)}
+def get_artur(x: float, y: float):
+    return {"result": artur(x, y)}
+
 @app.post("/artur")
-def post_c2(data: TwoNumbers):
- return {"result": artur(data.x, data.y)}
+def post_artur(data: TwoNumbers):
+    return {"result": artur(data.x, data.y)}

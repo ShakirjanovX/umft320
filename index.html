@@ -53,7 +53,10 @@
                     <span class="tab-icon">🔥</span>
                     <span class="tab-label">Soliyev</span>
                 </button>
-            </div>
+                <button class="tab-button avatar-tab-btn" data-function="artur" onclick="switchTab('artur')">
+                    <span class="tab-icon">🎨</span>
+                    <span class="tab-label">Artur</span>
+                </button>
 
             <!-- C2 Section -->
             <section id="c2" class="tab-content active avatar-content">
@@ -220,6 +223,41 @@
                 </div>
             </section>
 
+            <!-- Artur Section -->
+            <section id="artur" class="tab-content avatar-content">
+                <div class="function-card">
+                    <div class="card-header">
+                        <h2>🎨 Функция Artur</h2>
+                        <div class="hologram-effect"></div>
+                    </div>
+                    <div class="input-group avatar-inputs">
+                        <div class="input-wrapper">
+                            <label>X Параметр</label>
+                            <input type="number" id="artur_x" placeholder="Введите X" value="6">
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label>Y Параметр</label>
+                            <input type="number" id="artur_y" placeholder="Введите Y" value="3">
+                            <div class="input-glow"></div>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn avatar-btn btn-primary" onclick="callApi('artur', 'GET')">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">GET запрос</span>
+                        </button>
+                        <button class="btn avatar-btn btn-secondary" onclick="callApi('artur', 'POST')">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">POST запрос</span>
+                        </button>
+                    </div>
+                    <div id="artur_result" class="result-box avatar-result"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
             <!-- API Info Section -->
             <section class="api-info avatar-info">
                 <h3>🌐 Портал Информации</h3>
@@ -229,9 +267,6 @@
                 </p>
                 <p>🔗 API работает на <strong>http://localhost:8000</strong></p>
             </section>
-        </main>
-
-        <footer>
             <p>&copy; 2025 umft320 Shakirjanov. Все права защищены.</p>
         </footer>
     </div>

@@ -1,5 +1,6 @@
 // Configuration
-const API_BASE_URL = 'http://localhost:8000';
+// Автоматически определяем хост (текущий адрес браузера)
+const API_BASE_URL = `http://${window.location.hostname}:${window.location.port}`;
 
 // Switch between tabs
 function switchTab(tabName) {
