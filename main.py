@@ -67,3 +67,10 @@ def get_soliyev(x: float, y: float):
 @app.post("/soliyev")
 def post_soliyev(data: TwoNumbers):
     return {"result": func_soliyev(data.x, data.y)}
+
+@app.get("/artur")
+def get_c2(x: float, y: float):
+ return {"result": artur(x, y)}
+@app.post("/artur")
+def post_c2(data: TwoNumbers):
+ return {"result": artur(data.x, data.y)}
