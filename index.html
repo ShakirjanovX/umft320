@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>umft320 - Shakirjanov Portal</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="avatar-bg">
+        <div class="floating-element element-1"></div>
+        <div class="floating-element element-2"></div>
+        <div class="floating-element element-3"></div>
+        <div class="floating-element element-4"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="avatar-header">
+                <div class="avatar-circle">
+                    <div class="avatar-inner">
+                        <span class="avatar-text">Ш</span>
+                    </div>
+                </div>
+                <div class="header-content">
+                    <h1>🌍 umft320 Shakirjanov</h1>
+                    <p class="subtitle">🔮 Портал Pandora AI - FastAPI Frontend</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Navigation Tabs with Avatar Style -->
+            <div class="tabs avatar-tabs">
+                <button class="tab-button avatar-tab-btn active" data-function="c2" onclick="switchTab('c2')">
+                    <span class="tab-icon">⚡</span>
+                    <span class="tab-label">Ilyas</span>
+                </button>
+                <button class="tab-button avatar-tab-btn" data-function="p1" onclick="switchTab('p1')">
+                    <span class="tab-icon">🔷</span>
+                    <span class="tab-label">Shakirjanov</span>
+                </button>
+                <button class="tab-button avatar-tab-btn" data-function="inoyatov" onclick="switchTab('inoyatov')">
+                    <span class="tab-icon">💫</span>
+                    <span class="tab-label">Inoyatov</span>
+                </button>
+                <button class="tab-button avatar-tab-btn" data-function="konstantin" onclick="switchTab('konstantin')">
+                    <span class="tab-icon">🌀</span>
+                    <span class="tab-label">Konstantin</span>
+                </button>
+                <button class="tab-button avatar-tab-btn" data-function="soliyev" onclick="switchTab('soliyev')">
+                    <span class="tab-icon">🔥</span>
+                    <span class="tab-label">Soliyev</span>
+                </button>
+            </div>
+
+            <!-- C2 Section -->
+            <section id="c2" class="tab-content active avatar-content">
+                <div class="function-card">
+                    <div class="card-header">
+                        <h2>⚡ Функция Ilyas</h2>
+                        <div class="hologram-effect"></div>
+                    </div>
+                    <div class="input-group avatar-inputs">
+                        <div class="input-wrapper">
+                            <label>X Параметр</label>
+                            <input type="number" id="c2_x" placeholder="Введите X" value="5">
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label>Y Параметр</label>
+                            <input type="number" id="c2_y" placeholder="Введите Y" value="10">
+                            <div class="input-glow"></div>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn avatar-btn btn-primary" onclick="callApi('c2', 'GET')">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">GET запрос</span>
+                        </button>
+                        <button class="btn avatar-btn btn-secondary" onclick="callApi('c2', 'POST')">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">POST запрос</span>
+                        </button>
+                    </div>
+                    <div id="c2_result" class="result-box avatar-result"></div>
+                </div>
+            </section>
+
+            <!-- P1 Section -->
+            <section id="p1" class="tab-content avatar-content">
+                <div class="function-card">
+                    <div class="card-header">
+                        <h2>🔷 Функция Shakirjanov</h2>
+                        <div class="hologram-effect"></div>
+                    </div>
+                    <div class="input-group avatar-inputs">
+                        <div class="input-wrapper">
+                            <label>X Параметр</label>
+                            <input type="number" id="p1_x" placeholder="Введите X" value="3">
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label>Y Параметр</label>
+                            <input type="number" id="p1_y" placeholder="Введите Y" value="7">
+                            <div class="input-glow"></div>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn avatar-btn btn-primary" onclick="callApi('p1', 'GET')">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">GET запрос</span>
+                        </button>
+                        <button class="btn avatar-btn btn-secondary" onclick="callApi('p1', 'POST')">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">POST запрос</span>
+                        </button>
+                    </div>
+                    <div id="p1_result" class="result-box avatar-result"></div>
+                </div>
+            </section>
+
+            <!-- Inoyatov Section -->
+            <section id="inoyatov" class="tab-content avatar-content">
+                <div class="function-card">
+                    <div class="card-header">
+                        <h2>💫 Функция Inoyatov</h2>
+                        <div class="hologram-effect"></div>
+                    </div>
+                    <div class="input-group avatar-inputs">
+                        <div class="input-wrapper">
+                            <label>X Параметр</label>
+                            <input type="number" id="inoyatov_x" placeholder="Введите X" value="4">
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label>Y Параметр</label>
+                            <input type="number" id="inoyatov_y" placeholder="Введите Y" value="4">
+                            <div class="input-glow"></div>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn avatar-btn btn-primary" onclick="callApi('inoyatov', 'GET')">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">GET запрос</span>
+                        </button>
+                        <button class="btn avatar-btn btn-secondary" onclick="callApi('inoyatov', 'POST')">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">POST запрос</span>
+                        </button>
+                    </div>
+                    <div id="inoyatov_result" class="result-box avatar-result"></div>
+                </div>
+            </section>
+
+            <!-- Konstantin Section -->
+            <section id="konstantin" class="tab-content avatar-content">
+                <div class="function-card">
+                    <div class="card-header">
+                        <h2>🌀 Функция Konstantin</h2>
+                        <div class="hologram-effect"></div>
+                    </div>
+                    <div class="input-group avatar-inputs">
+                        <div class="input-wrapper">
+                            <label>X Параметр</label>
+                            <input type="number" id="konstantin_x" placeholder="Введите X" value="2">
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label>Y Параметр</label>
+                            <input type="number" id="konstantin_y" placeholder="Введите Y" value="8">
+                            <div class="input-glow"></div>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn avatar-btn btn-primary" onclick="callApi('konstantin', 'GET')">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">GET запрос</span>
+                        </button>
+                        <button class="btn avatar-btn btn-secondary" onclick="callApi('konstantin', 'POST')">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">POST запрос</span>
+                        </button>
+                    </div>
+                    <div id="konstantin_result" class="result-box avatar-result"></div>
+                </div>
+            </section>
+
+            <!-- Soliyev Section -->
+            <section id="soliyev" class="tab-content avatar-content">
+                <div class="function-card">
+                    <div class="card-header">
+                        <h2>🔥 Функция Soliyev</h2>
+                        <div class="hologram-effect"></div>
+                    </div>
+                    <div class="input-group avatar-inputs">
+                        <div class="input-wrapper">
+                            <label>X Параметр</label>
+                            <input type="number" id="soliyev_x" placeholder="Введите X" value="9">
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label>Y Параметр</label>
+                            <input type="number" id="soliyev_y" placeholder="Введите Y" value="3">
+                            <div class="input-glow"></div>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn avatar-btn btn-primary" onclick="callApi('soliyev', 'GET')">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">GET запрос</span>
+                        </button>
+                        <button class="btn avatar-btn btn-secondary" onclick="callApi('soliyev', 'POST')">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">POST запрос</span>
+                        </button>
+                    </div>
+                    <div id="soliyev_result" class="result-box avatar-result"></div>
+                </div>
+            </section>
+
+            <!-- API Info Section -->
+            <section class="api-info avatar-info">
+                <h3>🌐 Портал Информации</h3>
+                <p>
+                    📖 Документация: <a href="http://localhost:8000/docs" target="_blank">Swagger UI</a> | 
+                    <a href="http://localhost:8000/redoc" target="_blank">ReDoc</a>
+                </p>
+                <p>🔗 API работает на <strong>http://localhost:8000</strong></p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 umft320 Shakirjanov. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>

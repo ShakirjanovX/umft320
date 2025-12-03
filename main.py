@@ -1,23 +1,41 @@
 from fastapi import FastAPI
-import proekt320ShakirjanovXasan as p1
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+from fastapi.middleware.cors import CORSMiddleware
+from proekt320ShakirjanovXasan import p1
 from funcInoyatov import funcinoyatov 
 from funcartur import artur
 from pydantic import BaseModel
 from functionkostya import konstantin
 from funcSoliyev import func_soliyev
 from funcIlyas import c2
+import os
 
-app = FastAPI( title="umft320",
+app = FastAPI( title="umft320 Shakirjanov",
 version="1.0.0",
 description="Shakirjanov-Платформа для покупки и продажи",
 docs_url="/docs",
 redoc_url="/redoc",)
 
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Montar archivos estáticos (CSS, JS)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+static_dir = os.path.join(current_dir, "static")
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
+
 @app.get("/")
 def read_root():
-    return {"message": "Hello World"}
+    return FileResponse(os.path.join(current_dir, "index.html"))
 print("                         -----------------bu Shakirjanov reposi------------------")
-print(p1.func1(2,3))
+print(p1(2,3))
 print(funcinoyatov(4,4))
 print(artur(6,3))
 print ("fastapi+uvicorn")
