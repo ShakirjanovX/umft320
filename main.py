@@ -10,6 +10,7 @@ from functionkostya import konstantin
 from funcSoliyev import func_soliyev
 from funcIlyas import c2
 import os
+from funcShavkatov import shavkatov
 
 app = FastAPI( title="umft320 Shakirjanov",
 version="1.0.0",
@@ -93,3 +94,11 @@ def get_artur(x: float, y: float):
 @app.post("/artur")
 def post_artur(data: TwoNumbers):
     return {"result": artur(data.x, data.y)}
+
+@app.post("/shavkatov")
+def post_shavkatov(data: TwoNumbers):
+    return {"result": shavkatov(data.x, data.y)}
+
+@app.get("/shavkatov")
+def get_shavkatov(x: float, y: float):
+    return {"result": shavkatov(x, y)}
